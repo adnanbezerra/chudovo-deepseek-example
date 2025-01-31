@@ -1,6 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import exampleRouter from "./routers/router.js";
 
 dotenv.config();
 
@@ -11,8 +12,8 @@ server.use(cors());
 server.use(express.json());
 
 // Routers session
-// server.use()
+server.use(exampleRouter);
 
 server.listen(PORT, () => {
-    console.log(`It's alive on port ${PORT}`);
-})
+    console.log(`Listening on port ${PORT}`);
+});
